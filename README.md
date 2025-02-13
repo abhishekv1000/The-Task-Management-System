@@ -15,6 +15,7 @@ https://github.com/user-attachments/assets/e3990254-5b28-4455-bae8-756d66515243
 
 
 Please follow the steps below to set up the project locally.
+------
 *IN FRONTEND FOLDER-
 1. npm i
 2. npm start
