@@ -5,7 +5,7 @@ require("./conn/conn");
 const cors = require("cors");
 const UserAPI = require("./routes/user");
 const TaskAPI = require("./routes/task");
-app.use(cors(origin = "http://localhost:3000" , credentials = true));
+app.use(cors(origin = "https://the-task-management-system.vercel.app" , credentials = true));
 app.use(express.json());
 app.use("/api/v1", UserAPI);
 app.use("/api/v2", TaskAPI);
