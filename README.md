@@ -4,10 +4,7 @@ This repository contains both the **frontend** and **backend** parts of the appl
 
 
 
-
-
-
-https://github.com/user-attachments/assets/e3990254-5b28-4455-bae8-756d66515243
+https://github.com/user-attachments/assets/131b6b6d-e36b-4a6d-9344-5a92a65d4af9
 
 
 
