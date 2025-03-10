@@ -15,9 +15,9 @@ const CompletedTasks = () => {
   useEffect(() => {
     const fetch = async () => {
       try {
-        // Construct the complete URL using the API_BASE_URL variable
+        
         const response = await axios.get(
-          `${API_BASE_URL}/v2/get-complete-tasks`, // Append endpoint to the base URL
+          `${API_BASE_URL}/v2/get-complete-tasks`, 
           { headers }
         );
         setData(response.data.data);
