@@ -7,10 +7,10 @@ const authenticateToken = (req, res, next) => {
   }
 
   try {
-    // Verify token
+  
     const decoded = jwt.verify(token, "rajTM");
-    req.user = decoded; // Attach the decoded data (userId) to the request object
-    next(); // Continue to the next middleware or route handler
+    req.user = decoded;
+    next(); 
   } catch (error) {
     res.status(401).json({ message: "Token is not valid" });
   }
