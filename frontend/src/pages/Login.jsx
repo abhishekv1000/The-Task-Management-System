@@ -26,7 +26,7 @@ const Login = () => {
         setData({ username: "", password: "" });
         localStorage.setItem("id", response.data.id);
         localStorage.setItem("token", response.data.token);
-        history("/"); // Redirect to home page after login
+        history("/");
       }
     } catch (error) {
       setError(error.response.data.message);
@@ -55,7 +55,7 @@ const Login = () => {
       <div className="p-10 w-96 rounded-xl bg-white shadow-2xl">
         <div className="text-3xl font-semibold text-gray-800 text-center mb-8">Sign In</div>
         
-        {/* Input Fields */}
+      
         <input
           autoComplete="off"
           type="text"
@@ -75,7 +75,7 @@ const Login = () => {
           value={Data.password}
         />
         
-        {/* Login Button */}
+     
         <div className="w-full flex items-center justify-between mt-8">
           <button
             className="bg-indigo-600 hover:bg-indigo-700 text-lg font-semibold text-white px-8 py-3 rounded-lg transition duration-300 w-full"
@@ -85,7 +85,7 @@ const Login = () => {
           </button>
         </div>
 
-        {/* Link to Signup */}
+    
         <div className="mt-8 text-center">
           <Link to="/signup" className="text-indigo-600 hover:text-indigo-500 text-sm font-medium">
             Don't have an account? Sign up here
