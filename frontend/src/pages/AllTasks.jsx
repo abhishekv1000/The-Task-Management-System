@@ -24,9 +24,9 @@ function AllTasks() {
   useEffect(() => {
     const fetch = async () => {
       try {
-        // Construct the full API endpoint using the base URL
+     
         const response = await axios.get(
-          `${API_BASE_URL}/v2/get-all-tasks`, // Append the endpoint to the base URL
+          `${API_BASE_URL}/v2/get-all-tasks`, 
           { headers }
         );
         setData(response.data.data);
@@ -38,12 +38,11 @@ function AllTasks() {
     if (localStorage.getItem("id") && localStorage.getItem("token")) {
       fetch();
     }
-  }, [headers]); // added `headers` as dependency to ensure it updates when localStorage changes
-
+  }, [headers]); 
   return (
     <>
       <div>
-        {/* Add Task Button */}
+      
         <div className="w-full flex justify-end px-10 py-8">
           <button
             onClick={() => setInputDiv("fixed")}
@@ -53,7 +52,6 @@ function AllTasks() {
           </button>
         </div>
 
-        {/* Cards Display */}
         {Data && (
           <Cards
             home={"true"}
@@ -64,7 +62,6 @@ function AllTasks() {
         )}
       </div>
 
-      {/* Input Data Form (Modal) */}
       <InputData
         inputDiv={inputDiv}
         setInputDiv={setInputDiv}
