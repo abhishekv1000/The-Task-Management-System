@@ -16,9 +16,9 @@ const ImportantTasks = () => {
   useEffect(() => {
     const fetch = async () => {
       try {
-        // Construct the full API endpoint using the base URL
+       
         const response = await axios.get(
-          `${API_BASE_URL}/v2/get-imp-tasks`, // Append the endpoint to the base URL
+          `${API_BASE_URL}/v2/get-imp-tasks`,
           { headers }
         );
         setData(response.data.data);
@@ -28,7 +28,7 @@ const ImportantTasks = () => {
     };
 
     fetch();
-  }, [headers]); // added `headers` as dependency to ensure it updates when localStorage changes
+  }, [headers]); 
 
   return (
     <div className="container mx-auto p-4">
