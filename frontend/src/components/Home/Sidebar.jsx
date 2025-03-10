@@ -9,11 +9,11 @@ import API_BASE_URL from "../../apiurl";
 
 
 const Sidebar = () => {
-  const [Data, setData] = useState(null); // Data to store user details
-  const [isNavbarOpen, setIsNavbarOpen] = useState(false); // For mobile toggle
+  const [Data, setData] = useState(null); 
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const history = useNavigate();
 
-  // Navbar Links Data
+
   const data = [
     { title: "All Tasks", icon: <CgNotes />, link: "/" },
     { title: "Important Tasks", icon: <MdLabelImportant />, link: "/importantTasks" },
@@ -21,36 +21,36 @@ const Sidebar = () => {
     { title: "Incompleted Tasks", icon: <TbNotebookOff />, link: "/incompletedTasks" },
   ];
 
-  // Logout function
+ 
   const logout = () => {
-    localStorage.removeItem("id"); // Remove user ID from local storage
-    localStorage.removeItem("token"); // Remove auth token from local storage
-    history("/signup"); // Redirect to signup page
+    localStorage.removeItem("id"); 
+    localStorage.removeItem("token");
+    history("/signup");
   };
 
-  // Headers for API requests
+
   const headers = {
     id: localStorage.getItem("id"),
     Authorization: `Bearer ${localStorage.getItem("token")}`,
   };
 
-  // Fetch user data from API
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${API_BASE_URL}/v2/get-all-tasks`, // Replace with actual endpoint to get user data
+          `${API_BASE_URL}/v2/get-all-tasks`, 
           { headers }
         );
-        setData(response.data.data); // Set user data
+        setData(response.data.data); 
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
-    // Check if user is authenticated
+   
     if (localStorage.getItem("id") && localStorage.getItem("token")) {
-      fetchData(); // Fetch tasks if authenticated
+      fetchData(); 
     }
   }, []);
 
@@ -86,7 +86,7 @@ const Sidebar = () => {
               <div>{Data.email}</div> {/* Displaying email */}
             </div>
           ) : (
-            <div>Loading...</div> // Show loading if data is not available
+            <div>Loading...</div>
           )}
         </div>
 
