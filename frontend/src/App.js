@@ -13,13 +13,13 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    // Skip redirect to signup if we're already on /login page
+  
     if (!window.location.pathname.includes('/login')) {
       if (localStorage.getItem("id") && localStorage.getItem("token")) {
         setIsLoggedIn(true);
       } else {
         setIsLoggedIn(false);
-        navigate("/signup"); // Redirect to signup if not logged in
+        navigate("/signup"); 
       }
     }
   }, [isLoggedIn, navigate]);
