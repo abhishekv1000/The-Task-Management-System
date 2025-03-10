@@ -3,7 +3,7 @@ const Task = require("../models/task");
 const User = require("../models/user");
 const { authenticateToken } = require("./auth");
 
-//create-task
+
 router.post("/create-task", authenticateToken, async (req, res) => {
   try {
     const { title, desc } = req.body;
@@ -19,7 +19,7 @@ router.post("/create-task", authenticateToken, async (req, res) => {
   }
 });
 
-//GET ALL TASKS
+
 router.get("/get-all-tasks", authenticateToken, async (req, res) => {
   try {
     const { id } = req.headers;
@@ -34,7 +34,6 @@ router.get("/get-all-tasks", authenticateToken, async (req, res) => {
   }
 });
 
-//DELETE TASKS
 router.delete("/delete-task/:id", authenticateToken, async (req, res) => {
   try {
     const { id } = req.params;
@@ -48,7 +47,6 @@ router.delete("/delete-task/:id", authenticateToken, async (req, res) => {
   }
 });
 
-//UPDATE TASK
 router.put("/update-task/:id", authenticateToken, async (req, res) => {
   try {
     const { id } = req.params;
@@ -61,7 +59,6 @@ router.put("/update-task/:id", authenticateToken, async (req, res) => {
   }
 });
 
-//UPDATE IMP. TASK
 router.put("/update-imp-task/:id", authenticateToken, async (req, res) => {
   try {
     const { id } = req.params;
@@ -75,7 +72,7 @@ router.put("/update-imp-task/:id", authenticateToken, async (req, res) => {
   }
 });
 
-//UPDATE-COMPLETE TASK
+
 router.put("/update-complete-task/:id", authenticateToken, async (req, res) => {
   try {
     const { id } = req.params;
@@ -89,7 +86,6 @@ router.put("/update-complete-task/:id", authenticateToken, async (req, res) => {
   }
 });
 
-//GET IMP. TASKS
 router.get("/get-imp-tasks", authenticateToken, async (req, res) => {
   try {
     const { id } = req.headers;
@@ -106,7 +102,7 @@ router.get("/get-imp-tasks", authenticateToken, async (req, res) => {
   }
 });
 
-//GET COMPLETED TASKS
+
 router.get("/get-complete-tasks", authenticateToken, async (req, res) => {
   try {
     const { id } = req.headers;
@@ -123,7 +119,7 @@ router.get("/get-complete-tasks", authenticateToken, async (req, res) => {
   }
 });
 
-//GET INCOMPLETED TASKS
+
 router.get("/get-incomplete-tasks", authenticateToken, async (req, res) => {
   try {
     const { id } = req.headers;
